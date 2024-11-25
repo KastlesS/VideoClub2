@@ -37,6 +37,7 @@ class VideoClub{
 
     public function anadirProducto(Producto $p){
         $this->productos[]=$p;
+        echo "El producto se ha introducido correctamente. <br>";
     }
 
     public function anadirProductos(Producto ...$p){
