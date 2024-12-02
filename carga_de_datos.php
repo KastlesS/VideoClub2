@@ -12,22 +12,7 @@ if(!isset($_SESSION['videoclub'])){
 
 $videoclub = $_SESSION['videoclub'];
 
-//Crear un cliente existente:
-$cliente1 = new Cliente("Ivan","11111111A");
-$videoclub->anadirCliente($cliente1);
-echo "<br>";
-echo "<br>";
 
-
-//Crear nuevo cliente
-$cliente2 = new Cliente("Pepe","12345678B");
-$videoclub->anadirCliente($cliente2);
-echo "<br>";
-echo "<br>";
-
-//Cliente1 va a alquilar un procucto existente
-$juego1 = new Juego("CS:GO",3,"PC","FPS");
-$videoclub->alquilar($cliente1,$juego1);
 ?>
 
 <!DOCTYPE html>
@@ -36,18 +21,24 @@ $videoclub->alquilar($cliente1,$juego1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoClub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pagina de inicio</h1>
-    <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
-        <button name='boton'>Haz click para mostar el objeto VideoClub (para ver si se ha cargado)</button>
-    </form>
-    <form action=""></form>
-    <p><?php
-            if(isset($_GET['boton'])){
-                $videoclub->Imprimir();
-            }
-        ?>
-    </p>
+    <div class="container">
+        <header class="cabecera">
+            <h1>Bienvenido al video club: <?=$videoclub->getNombre()?></h1>
+        </header>
+        <main class="principal">
+            <form action="<?=$_SERVER['PHP_SELF']?>" method="get" class="formulario">
+                <button class="boton" name='mostrar' value='clientes'>Mostrar Clientes</button>
+                <button class="boton" name='mostrar' value='productos'>Mostar Productos</button>
+                <button class='boton' name='alquilar' value='alquilar'>Alquilar Producto</button>
+                <button class="boton" name='alquileres' value='alquileres'>Mostrar Alquileres</button>
+            </form>
+            <div class="contenido">
+                <p>Caca</p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
