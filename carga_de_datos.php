@@ -11,8 +11,6 @@ if(!isset($_SESSION['videoclub'])){
 }
 
 $videoclub = $_SESSION['videoclub'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +33,6 @@ $videoclub = $_SESSION['videoclub'];
                 <button class='boton' name='alquilar' value='alquilar'>Alquilar Producto</button>
                 <button class="boton" name='alquileres' value='alquileres'>Mostrar Alquileres</button>
             </form>
-            <div class="contenido">
-                <p>Caca</p>
-            </div>
         </main>
     </div>
 </body>
