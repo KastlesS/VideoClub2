@@ -27,11 +27,11 @@ $videoclub = $_SESSION['videoclub'];
             <h1>Bienvenido al video club: <?=$videoclub->getNombre()?></h1>
         </header>
         <main class="principal">
-            <form action="<?=$_SERVER['PHP_SELF']?>" method="get" class="formulario">
-                <button class="boton" name='mostrar' value='clientes'>Mostrar Clientes</button>
-                <button class="boton" name='mostrar' value='productos'>Mostar Productos</button>
-                <button class='boton' name='alquilar' value='alquilar'>Alquilar Producto</button>
-                <button class="boton" name='alquileres' value='alquileres'>Mostrar Alquileres</button>
+            <form action="contenido.php" method="get" class="formulario">
+                <button class="boton" name='video' value='clientes'>Mostrar Clientes</button>
+                <button class="boton" name='video' value='productos'>Mostar Productos</button>
+                <button class='boton' name='video' value='alquilar'>Alquilar Producto</button>
+                <button class="boton" name='video' value='alquileres'>Mostrar Alquileres</button>
             </form>
         </main>
     </div>
