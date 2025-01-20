@@ -14,15 +14,15 @@
 
     function mostrarClientes($videoclub):string{
         $clientes = $videoclub->getClientes();
-        $text="<table class='client'><tr><th>Nombre</th><th>DNI</th><th>Productos</th></tr>";
+        $text="<div class='principal'>";
         foreach ($clientes as $k) {
-            $productos = "";
+            $text.="<div class='cliente'><h2>".$k->getNombre()."</h2><img src='anonimo.png' class='imagen'></img><p>DNI:".$k->getDni()."</p><ul class='productosClientes'>";
             foreach($k->getProductos() as $p){
-                $productos = $p.", ";
+                $text.="<li>Nombre del Producto: ".$p->getNombre()."</li><li>Precio: ".$p->getPrecio()."</li>";
             }
-            $text.="<tr><td>".$k->getNombre()."</td><td>".$k->getDni()."</td><td>".$productos."</td></tr>";
+            $text.="</ul></div>";
         }
-        $text.="</table>";
+        $text.="</div>";
         return $text;
     }
 
@@ -40,12 +40,13 @@
 
     function mostarProductos($videoclub):string{
         $productos = $videoclub->getProductos();
-        $text="<table><tr><th>ID</th><th>Tipo</th><th>Nombre</th><th>Precio</th></tr>";
+        $text="<div class='principal'>";
         foreach($productos as $p){
+            $text.="<div class='producto'>";
             $tipo = tipoProducto($p);
-            $text.="<tr><td>".$p->getId()."</td><td>".$tipo."</td><td>".$p->getNombre()."</td><td>".$p->getPrecio()."$</td></tr>";
+            $text.="<h2>".$p->getNombre()."</h2><img src='product.png'></img><h3>Tipo: ".$tipo."<h3><h4>Precio: ".$p->getPrecio()."</h4>";
         }
-        $text.="</table>";
+        $text.="</div>";
         return $text;
     }
 
@@ -69,6 +70,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contenido</title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
     <div class="container">

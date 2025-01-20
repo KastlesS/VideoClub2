@@ -32,17 +32,14 @@ class VideoClub{
 
     public function anadirClientes(Cliente ...$c){
         $this->clientes=$c;
-        echo "Los clientes se han introducido correctamente. <br>";
     }
 
     public function anadirProducto(Producto $p){
         $this->productos[]=$p;
-        echo "El producto se ha introducido correctamente. <br>";
     }
 
     public function anadirProductos(Producto ...$p){
         $this->productos=$p;
-        echo "Los productos se han introducido correctamente. <br>";
     }
 
     public function alquilar(Cliente $c, Producto $p){
