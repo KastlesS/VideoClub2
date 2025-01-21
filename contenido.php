@@ -16,11 +16,11 @@
         $clientes = $videoclub->getClientes();
         $text="<div class='principal'>";
         foreach ($clientes as $k) {
-            $text.="<div class='cliente'><h2>".$k->getNombre()."</h2><img src='anonimo.png' class='imagen'></img><p>DNI:".$k->getDni()."</p><ul class='productosClientes'>";
+            $text.="<div class='cliente'><h2>".$k->getNombre()."</h2><img src='anonimo.png' class='imagen'></img><p>DNI:".$k->getDni()."</p><select name='products' class='products'>";
             foreach($k->getProductos() as $p){
-                $text.="<li>Nombre del Producto: ".$p->getNombre()."</li><li>Precio: ".$p->getPrecio()."</li>";
+                $text.="<option value='{$p->getId()}'>".$p->getNombre()."</option>";
             }
-            $text.="</ul></div>";
+            $text.="</select></div>";
         }
         $text.="</div>";
         return $text;
